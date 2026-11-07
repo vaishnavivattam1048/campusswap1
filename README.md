@@ -2,151 +2,153 @@
 
 
 
-\*\*A Student \& Faculty Marketplace for GNITS\*\*
+CampusSwap1 is a web-based marketplace designed for students and faculty of GNITS. It provides a platform to sell, exchange, or give away pre-owned items within the campus community.
 
 
 
-\## About the Project
+\## 🌐 Live Project
 
 
 
-CampusSwap1 is a web-based campus marketplace developed for students and faculty of G. Narayanamma Institute of Technology and Science (GNITS).
+\- \*\*Website:\*\* https://campusswap1.netlify.app
+
+\- \*\*Backend API:\*\* https://campusswap1.onrender.com
+
+\- \*\*GitHub Repository:\*\* https://github.com/vaishnavivattam1048/campusswap1
 
 
 
-It provides a common platform where campus members can buy, sell, exchange, or give away used items within the college community.
-
-
-
-\## Problem Statement
-
-
-
-Students often struggle to find affordable second-hand items within their campus. CampusSwap1 aims to make this process easier by providing a centralized and accessible marketplace.
-
-
-
-\## Key Features
+\## ✨ Features
 
 
 
 \- User registration and login
 
-\- Browse available marketplace listings
+\- Browse available campus listings
 
-\- Add and remove items from wishlist
+\- Create and manage item listings
 
-\- Express interest in listed items
+\- Sell, swap, or give away used items
 
-\- View item details and descriptions
+\- Add and remove wishlist items
 
-\- Support for selling, swapping and giving away items
+\- Send interest requests for listings
 
-\- User dashboard and profile management
+\- Student and faculty profiles
 
-\- Database-backed data storage
 
 
+\## 🛠️ Tech Stack
 
-\## Technology Stack
 
 
+\*\*Frontend\*\*
 
-| Component | Technology |
+\- HTML
 
-|---|---|
+\- CSS
 
-| Frontend | HTML, CSS, JavaScript |
+\- JavaScript
 
-| Backend | Node.js, Express.js |
 
-| Database | Supabase (PostgreSQL) |
 
-| API Communication | REST APIs |
+\*\*Backend\*\*
 
-| Version Control | Git and GitHub |
+\- Node.js
 
+\- Express.js
 
 
-\## Project Structure
 
+\*\*Database and Authentication\*\*
 
+\- Supabase
 
-```text
+\- PostgreSQL
 
-CampusSwap1/
 
-│
 
-├── index.html
+\*\*Deployment\*\*
 
-├── style.css
+\- Netlify – Frontend hosting
 
-├── script.js
+\- Render – Backend hosting
 
-│
 
-└── server/
 
-&#x20;   ├── server.js
+\## 🏗️ Application Architecture
 
-&#x20;   ├── db.js
 
-&#x20;   ├── package.json
 
-&#x20;   └── package-lock.json
+1\. Users access the website through their browser.
 
-```
+2\. The frontend is hosted on Netlify.
 
+3\. API requests are sent to the Express.js backend hosted on Render.
 
+4\. The backend communicates with Supabase for database operations.
 
-\## Getting Started
 
 
+\## 💻 Run Locally
 
-1\. Clone the repository.
 
-2\. Install Node.js.
 
-3\. Navigate to the server directory.
+1\. Clone the repository:
 
-4\. Install the required dependencies using `npm install`.
 
-5\. Configure the required environment variables in `server/.env`.
 
-6\. Start the backend using the appropriate npm start command.
+&#x20;  ```bash
 
-7\. Open the frontend using a local development server.
+&#x20;  git clone https://github.com/vaishnavivattam1048/campusswap1.git
 
+&#x20;  ```
 
 
-\## Future Enhancements
 
+2\. Open the project folder.
 
 
-\- Improved search and filtering
 
-\- Enhanced user experience
+3\. Install backend dependencies:
 
-\- Additional marketplace management features
 
-\- Better notification and communication features
 
+&#x20;  ```bash
 
+&#x20;  cd server
 
-\## Project Information
+&#x20;  npm install
 
+&#x20;  ```
 
 
-\*\*Project Name:\*\* CampusSwap1
 
+4\. Create a `.env` file inside the `server` folder and configure the required Supabase environment variables.
 
 
-\*\*Institution:\*\* G. Narayanamma Institute of Technology and Science (GNITS)
 
+5\. Start the backend:
 
 
-\*\*Domain:\*\* Web Development | Campus Marketplace
+
+&#x20;  ```bash
+
+&#x20;  npm start
+
+&#x20;  ```
+
+
+
+6\. Open `index.html` using Live Server to access the frontend.
+
+
+
+\## 🎯 Project Objective
+
+
+
+The objective of CampusSwap1 is to encourage reuse, reduce waste, and make buying, selling, and exchanging useful items easier within the college community.
 
 
 
@@ -154,5 +156,5 @@ CampusSwap1/
 
 
 
-\*Built to make campus exchanges simpler and more accessible.\*
+\*\*Developed as a Student Development Cell project at GNITS.\*\*
 

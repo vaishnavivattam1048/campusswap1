@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <script>
+        try {
+            const savedTheme = localStorage.getItem("campusSwapTheme");
+            if (savedTheme === "dark" || savedTheme === "light") {
+                document.documentElement.dataset.theme = savedTheme;
+            }
+        } catch (error) {}
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f7f1">
+    <title>CampusSwap | Your Campus Marketplace</title>
+    <meta name="description" content="Buy, sell, share and swap essentials with your campus community.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <nav class="navbar">
+        <a class="brand" href="#home" aria-label="CampusSwap home">
+            <span class="brand-mark">C<span>S</span></span>
+            <span>Campus<span class="brand-highlight">Swap</span></span>
+        </a>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#browse">Browse</a>
+            <a href="#free">Free Corner</a>
+            <a href="#swap">Swap</a>
+            <a href="#dashboard">Dashboard</a>
+        </div>
+
+        <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle" type="button"
+                    aria-label="Switch to dark mode" title="Switch theme">
+                <span id="themeIcon" aria-hidden="true">☾</span>
+            </button>
+            <a href="#account" class="login-link">Sign in</a>
+            <a href="#sell" class="button button-primary nav-list-button">+ List item</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <!-- HERO -->
+    <section class="hero section-wrap" id="home">
+        <div class="hero-content">
+            <span class="eyebrow"><span class="eyebrow-dot"></span> YOUR CAMPUS. YOUR COMMUNITY.</span>
+            <h1>Good finds.<br><span class="text-accent">Better connections.</span></h1>
+            <p class="hero-description">
+                Buy what you need, sell what you don't, and give your
+                pre-loved essentials a new home — all within your campus community.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#browse" class="button button-primary">Explore marketplace <span>↗</span></a>
+                <a href="#sell" class="button button-outline">Start listing <span>＋</span></a>
+            </div>
+
+            <div class="hero-trust">
+                <span class="trust-icon">✦</span>
+                <span>A smarter, more affordable way to be a student.</span>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="visual-topline">
+                <span class="live-dot"></span>
+                <span>THE CAMPUS MARKETPLACE</span>
+                <span class="visual-sparkle">✳</span>
+            </div>
+
+            <div class="visual-feature">
+                <div class="visual-feature-icon">↗</div>
+                <div>
+                    <span class="mini-label">BUY & SELL</span>
+                    <h3>Find your next favourite.</h3>
+                    <p>Useful things. Student-friendly prices.</p>
+                </div>
+            </div>
+
+            <div class="visual-feature">
+                <div class="visual-feature-icon icon-peach">♡</div>
+                <div>
+                    <span class="mini-label">GIVE FOR FREE</span>
+                    <h3>Pass good things on.</h3>
+                    <p>One student's extra is another's essential.</p>
+                </div>
+            </div>
+
+            <div class="visual-feature">
+                <div class="visual-feature-icon icon-yellow">⇄</div>
+                <div>
+                    <span class="mini-label">SWAP & SHARE</span>
+                    <h3>Trade more. Waste less.</h3>
+                    <p>Give your belongings a second life.</p>
+                </div>
+            </div>
+
+            <div class="visual-footer">
+                <span>Made for students, by students.</span>
+                <span class="visual-heart">♥</span>
+            </div>
+            <div class="decor decor-one"></div>
+            <div class="decor decor-two"></div>
+        </div>
+    </section>
+
+    <!-- QUICK FEATURES -->
+    <section class="quick-features section-wrap">
+        <a class="quick-card quick-buy" href="#browse">
+            <span class="quick-icon">↗</span>
+            <span class="quick-text">
+                <strong>Buy & Sell</strong>
+                <small>Find useful campus essentials</small>
+            </span>
+            <span class="quick-arrow">→</span>
+        </a>
+
+        <a class="quick-card quick-free" href="#free">
+            <span class="quick-icon">♡</span>
+            <span class="quick-text">
+                <strong>Free Corner</strong>
+                <small>Share what you no longer need</small>
+            </span>
+            <span class="quick-arrow">→</span>
+        </a>
+
+        <a class="quick-card quick-swap" href="#swap">
+            <span class="quick-icon">⇄</span>
+            <span class="quick-text">
+                <strong>Swap Items</strong>
+                <small>Exchange with fellow students</small>
+            </span>
+            <span class="quick-arrow">→</span>
+        </a>
+    </section>
+
+    <!-- MARKETPLACE -->
+    <section class="marketplace section-wrap" id="browse">
+        <div class="section-heading">
+            <div>
+                <span class="section-kicker">THE GOOD STUFF</span>
+                <h2>Explore the marketplace<span class="heading-period">.</span></h2>
+                <p>Little finds that make student life a little easier.</p>
+            </div>
+            <a href="#sell" class="text-action">Have something to sell? <span>↗</span></a>
+        </div>
+
+        <div class="filter-panel">
+            <div class="search-field">
+                <span aria-hidden="true">⌕</span>
+                <input type="search" id="searchInput" placeholder="Search books, calculators, bags..." aria-label="Search items">
+            </div>
+
+            <select id="categoryFilter" aria-label="Filter by category">
+                <option value="all">All categories</option>
+                <option value="Books">Books</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Stationery">Stationery</option>
+                <option value="Accessories">Accessories</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <select id="typeFilter" aria-label="Filter by listing type">
+                <option value="all">All listing types</option>
+                <option value="Sell">For sale</option>
+                <option value="Free">Free items</option>
+                <option value="Swap">For swapping</option>
+            </select>
+        </div>
+
+        <div class="results-line">
+            <span id="resultsCount">Featured finds</span>
+            <span class="results-note">Discover. Connect. Reuse.</span>
+        </div>
+
+        <div class="items-grid" id="itemsContainer" aria-live="polite">
+            <!-- Items are added by script.js -->
+        </div>
+    </section>
+
+    <!-- FREE CORNER -->
+    <section class="highlight-section section-wrap" id="free">
+        <div class="highlight-card free-highlight">
+            <div class="highlight-copy">
+                <span class="section-kicker">A LITTLE KINDNESS GOES A LONG WAY</span>
+                <h2>Good things deserve<br>a second life<span class="heading-period">.</span></h2>
+                <p>Have stationery, books, or useful essentials sitting unused? Give them to someone who could use them.</p>
+                <a class="button button-light" href="#sell" id="freeListLink">Give something away <span>♡</span></a>
+            </div>
+            <div class="highlight-art free-art" aria-hidden="true">
+                <span class="art-circle"></span>
+                <span class="art-symbol">♡</span>
+                <span class="art-caption">SHARE THE GOOD</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SWAP -->
+    <section class="swap-section section-wrap" id="swap">
+        <div class="swap-card">
+            <div class="swap-art" aria-hidden="true">
+                <span class="swap-big-symbol">⇄</span>
+                <span class="swap-art-label">TRADE SMARTER</span>
+            </div>
+            <div class="swap-copy">
+                <span class="section-kicker">A FRESH KIND OF EXCHANGE</span>
+                <h2>Your next favourite<br>might be a swap<span class="heading-period">.</span></h2>
+                <p>Want something new without spending more? List what you have and connect with students interested in exchanging.</p>
+                <a class="button button-primary" href="#sell">List an item to swap <span>→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIST AN ITEM -->
+    <section class="listing-section section-wrap" id="sell">
+        <div class="section-heading">
+            <div>
+                <span class="section-kicker">YOUR TURN</span>
+                <h2>Put it back in circulation<span class="heading-period">.</span></h2>
+                <p>Give your item a new home in just a few steps.</p>
+            </div>
+        </div>
+
+        <form id="itemForm" class="form-card">
+            <div class="form-intro">
+                <span class="form-icon">＋</span>
+                <div>
+                    <h3>Create a listing</h3>
+                    <p>Share a useful item with your campus community.</p>
+                </div>
+            </div>
+
+            <div class="form-grid">
+                <label class="form-field">
+                    Item name *
+                    <input type="text" id="itemName" placeholder="e.g. Engineering Mathematics textbook" required maxlength="90">
+                </label>
+
+                <label class="form-field">
+                    Category *
+                    <select id="itemCategory" required>
+                        <option value="">Choose a category</option>
+                        <option value="Books">Books</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Stationery">Stationery</option>
+                        <option value="Accessories">Accessories</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </label>
+
+                <label class="form-field">
+                    Listing type *
+                    <select id="itemType" required>
+                        <option value="Sell">Sell</option>
+                        <option value="Free">Give for free</option>
+                        <option value="Swap">Swap</option>
+                    </select>
+                </label>
+
+                <label class="form-field" id="priceField">
+                    Price (₹) *
+                    <input type="number" id="itemPrice" min="1" step="1" placeholder="Enter price">
+                </label>
+
+                <label class="form-field">
+                    Item condition *
+                    <select id="itemCondition" required>
+                        <option value="">Choose condition</option>
+                        <option value="Brand new">Brand new</option>
+                        <option value="Like new">Like new</option>
+                        <option value="Good">Good</option>
+                        <option value="Fair">Fair</option>
+                    </select>
+                </label>
+
+                <label class="form-field">
+                    Photo (optional)
+                    <input type="file" id="itemImage" accept="image/*">
+                </label>
+
+                <label class="form-field full-width">
+                    Description *
+                    <textarea id="itemDescription" rows="4" placeholder="Describe the item, its condition, and anything a student should know..." required maxlength="500"></textarea>
+                </label>
+            </div>
+
+            <div class="form-actions">
+                <p class="form-help">Your published listings are saved to the CampusSwap database.</p>
+                <button type="submit" class="button button-primary">Publish listing <span>↗</span></button>
+            </div>
+            <p id="listingMessage" class="status-message" role="status"></p>
+        </form>
+    </section>
+
+    <!-- ACCOUNT -->
+    <section class="account-section section-wrap" id="account">
+        <div class="section-heading">
+            <div>
+                <span class="section-kicker">YOUR CAMPUS PROFILE</span>
+                <h2>Join the community<span class="heading-period">.</span></h2>
+                <p>Create your CampusSwap account or sign in to continue.</p>
+            </div>
+        </div>
+
+        <div class="account-grid">
+            <form id="registerForm" class="form-card account-card">
+                <div class="form-intro">
+                    <span class="form-icon">✦</span>
+                    <div>
+                        <h3>New around here?</h3>
+                        <p>Register with your college details.</p>
+                    </div>
+                </div>
+
+                <label class="form-field">I am a *
+                    <select id="accountType" required>
+                        <option value="Student">Student</option>
+                        <option value="Faculty">Faculty</option>
+                    </select>
+                </label>
+
+                <label class="form-field">Full name *
+                    <input type="text" id="registerName" required maxlength="80" placeholder="Your name">
+                </label>
+
+                <label class="form-field">College email *
+                    <input type="email" id="registerEmail" required maxlength="150" placeholder="you@college.edu">
+                </label>
+
+                <label class="form-field">College name *
+                    <input type="text" id="registerCollege" required maxlength="120" placeholder="Your college">
+                </label>
+
+                <label class="form-field" id="branchField">Branch / Department *
+                    <input type="text" id="registerBranch" required maxlength="100" placeholder="e.g. CSE AI & ML">
+                </label>
+
+                <label class="form-field">Demo password *
+                    <input type="password" id="registerPassword" required minlength="4" maxlength="100" placeholder="At least 4 characters">
+                </label>
+
+                <button class="button button-primary button-full" type="submit">Create demo account →</button>
+                <p id="registerMessage" class="status-message" role="status"></p>
+            </form>
+
+            <form id="loginForm" class="form-card account-card login-card">
+                <div class="form-intro">
+                    <span class="form-icon">↗</span>
+                    <div>
+                        <h3>Welcome back</h3>
+                        <p>Sign in to your local demo account.</p>
+                    </div>
+                </div>
+
+                <label class="form-field">Email address *
+                    <input type="email" id="loginEmail" required placeholder="you@college.edu">
+                </label>
+
+                <label class="form-field">Demo password *
+                    <input type="password" id="loginPassword" required placeholder="Your demo password">
+                </label>
+
+                <button class="button button-primary button-full" type="submit">Sign in →</button>
+                <button class="button button-outline button-full" type="button" id="logoutButton" hidden>Sign out</button>
+                <p id="loginMessage" class="status-message" role="status"></p>
+
+                <div class="demo-notice">
+                    <span>ⓘ</span>
+                    <p>This is a front-end demonstration. Accounts and passwords are stored locally and are not secure. Use only test details.</p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- DASHBOARD -->
+    <section class="dashboard-section section-wrap" id="dashboard">
+        <div class="section-heading">
+            <div>
+                <span class="section-kicker">YOUR LITTLE CORNER</span>
+                <h2>Your activity at a glance<span class="heading-period">.</span></h2>
+                <p>Keep track of your listings, interests, and saved finds on this device.</p>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <article class="stat-card stat-green">
+                <span class="stat-icon">↗</span>
+                <p>My listings</p>
+                <strong id="listingCount">0</strong>
+                <small>Items you've added</small>
+            </article>
+
+            <article class="stat-card stat-peach">
+                <span class="stat-icon">♡</span>
+                <p>Interests sent</p>
+                <strong id="requestCount">0</strong>
+                <small>Items you're interested in</small>
+            </article>
+
+            <article class="stat-card stat-lilac">
+                <span class="stat-icon">☆</span>
+                <p>Wishlist</p>
+                <strong id="wishlistCount">0</strong>
+                <small>Finds saved for later</small>
+            </article>
+
+            <article class="stat-card stat-yellow">
+                <span class="stat-icon">₹</span>
+                <p>Potential savings</p>
+                <strong id="savingsCount">₹0</strong>
+                <small>Estimated from free items</small>
+            </article>
+        </div>
+
+        <div class="dashboard-note">
+            <span class="note-icon">✦</span>
+            <p><strong>Small actions, meaningful impact.</strong> Reusing and sharing campus essentials can help students spend less and reduce waste.</p>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <a class="brand footer-brand" href="#home">
+            <span class="brand-mark">C<span>S</span></span>
+            <span>Campus<span class="brand-highlight">Swap</span></span>
+        </a>
+        <p>Made for campus life. Built around sharing.</p>
+        <a href="#home" class="back-top">Back to top ↑</a>
+    </div>
+    <div class="footer-bottom">CampusSwap © 2026 · Student marketplace demo</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -5,7 +5,7 @@
 
 "use strict";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "https://campusswap1.onrender.com";
 let supabaseItems = [];
 
 // ---------- STORAGE HELPERS ----------
